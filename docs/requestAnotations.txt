@@ -1,0 +1,56 @@
+POST http://localhost:8080/api/parking-spot
+- Body:
+{
+    "parkingSpotNumber":"05thFloor-001",
+    "licensePlateCar":"FDP3663",
+    "brandCar":"Yamaha",
+    "modelCar":"Fazer 250",
+    "colorCar":"Black",
+    "responsibleName":"Wellison Bertelli",
+    "apartment":"01TH-001",
+    "block":"A"
+}
+
+- Response:
+{
+    "id": "4859724a-572d-415a-84ac-effdd130a40a",
+    "parkingSpotNumber": "05thFloor-001",
+    "licensePlateCar": "FDP3663",
+    "brandCar": "Yamaha",
+    "modelCar": "Fazer 250",
+    "colorCar": "Black",
+    "registrationDate": "2023-08-29T20:11:28.344937",
+    "responsibleName": "Wellison Bertelli",
+    "apartment": "01TH-001",
+    "block": "A"
+}
+
+
+-------------------------------------------------------------------------------
+
+POST http://localhost:8080/api/parking-spot
+- Body:
+{
+    "parkingSpotNumber":"05thFloor-002",
+    "licensePlateCar":"FDM3364",
+    "brandCar":"Chevrolet",
+    "modelCar":"Prisma 1.4",
+    "colorCar":"Cinza",
+    "responsibleName":"Sidnei Bertelli",
+    "apartment":"01TH-002",
+    "block":"A"
+}
+
+- Response:
+{
+    "id": "85617f41-9f2d-4ecc-8fe9-97faf63e5a57",
+    "parkingSpotNumber": "05thFloor-002",
+    "licensePlateCar": "FDM3364",
+    "brandCar": "Chevrolet",
+    "modelCar": "Prisma 1.4",
+    "colorCar": "Cinza",
+    "registrationDate": "2023-08-29T20:41:18.646601",
+    "responsibleName": "Sidnei Bertelli",
+    "apartment": "01TH-002",
+    "block": "A"
+}
