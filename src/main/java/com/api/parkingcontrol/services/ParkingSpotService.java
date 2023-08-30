@@ -2,10 +2,11 @@ package com.api.parkingcontrol.services;
 
 import com.api.parkingcontrol.models.ParkingSpotModel;
 import com.api.parkingcontrol.repositories.ParkingSpotRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-
 @Service
 public class ParkingSpotService {
     final ParkingSpotRepository parkingSpotRepository;
@@ -25,5 +26,8 @@ public class ParkingSpotService {
     @Transactional
     public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
         return this.parkingSpotRepository.save(parkingSpotModel);
+    }
+    public Page<ParkingSpotModel> listAll(Pageable pageable) {
+        return this.parkingSpotRepository.findAll(pageable);
     }
 }

@@ -5,13 +5,14 @@ import com.api.parkingcontrol.models.ParkingSpotModel;
 import com.api.parkingcontrol.services.ParkingSpotService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -21,7 +22,6 @@ public class ParkingSpotController {
     public ParkingSpotController(ParkingSpotService parkingSpotService) {
         this.parkingSpotService = parkingSpotService;
     }
-    // New Register POST
     @PostMapping
     public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid
                                                       ParkingSpotDTO parkingSpotDTO) {
@@ -46,5 +46,10 @@ public class ParkingSpotController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(parkingSpotService.save(parkingSpotModel));
+    }
+    @GetMapping
+    public ResponseEntity<Page<ParkingSpotModel>> listAll(Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(parkingSpotService.listAll(pageable));
     }
 }
